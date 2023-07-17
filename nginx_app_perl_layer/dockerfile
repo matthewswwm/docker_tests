@@ -1,0 +1,20 @@
+FROM docker.io/nginx:1.23.0-perl
+RUN apt-get update && \
+    apt-get install -y \
+        openssh-client \
+        git \
+        wget \
+        libxml2 \
+        libxslt1-dev \
+        libpcre3 \
+        libpcre3-dev \
+        zlib1g \
+        zlib1g-dev \
+        openssl \
+        libssl-dev \
+        libtool \
+        automake \
+        gcc \
+        g++ \
+        make && \
+    rm -rf /var/cache/apt
