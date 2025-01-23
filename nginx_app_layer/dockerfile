@@ -1,26 +1,22 @@
 FROM docker.io/nginx:1.24
-RUN apt-get update && \
-    apt-get install -y \
-        openssh-client \
-        git \
-        wget \
-        libxml2 \
-        libxslt1-dev \
-        libpcre3 \
-        libpcre3-dev \
-        zlib1g \
-        zlib1g-dev \
-        openssl \
-        libssl-dev \
-        libtool \
-        automake \
-        gcc \
-        g++ \
-        make && \
-    rm -rf /var/cache/apt
 
-#Curl Vulnerability https://www.cvedetails.com/cve/CVE-2018-1000300/
-RUN apt-get install -y curl
+RUN apt-get update
 
-#OpenSSH Vulnerability https://www.cvedetails.com/cve/CVE-2018-15473/
-RUN apt-get install -y openssh-server
+RUN apt-get install -y openssh-client
+RUN apt-get install -y git
+RUN apt-get install -y wget
+RUN apt-get install -y libxml2
+RUN apt-get install -y libxslt1-dev
+RUN apt-get install -y libpcre3
+RUN apt-get install -y libpcre3-dev
+RUN apt-get install -y zlib1g
+RUN apt-get install -y zlib1g-dev
+RUN apt-get install -y openssl
+RUN apt-get install -y libssl-dev
+RUN apt-get install -y libtool
+RUN apt-get install -y automake
+RUN apt-get install -y gcc
+RUN apt-get install -y g++
+RUN apt-get install -y make
+
+RUN rm -rf /var/cache/apt
